@@ -1,0 +1,42 @@
+-
+	const data = {
+		header: {
+			links: {
+				logo: 'https://ninelines.agency/',
+			},
+			menu: [
+				{
+					class: 'is-active',
+					url: '#about',
+					name: 'Резюме'
+				},
+				{
+					url: '#work',
+					name: 'Опыт'
+				},
+				{
+					url: '#skills',
+					name: 'Навыки'
+				}
+			]
+		},
+
+		share: {
+			caption: 'Поделиться:',
+			list: ['fb', 'vk', 'tg'],
+		},
+
+		home: {
+			title: 'гид&nbsp;по <br><span class="for-desktop">бережному</span><span class="for-devices">общению</span>',
+			read: 'Читать',
+		},
+
+		modal: {
+			close: 'Закрыть',
+		},
+	};
+
+script.
+	window.data = {
+		home: !{JSON.stringify(data.home)},
+	};

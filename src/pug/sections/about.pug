@@ -1,0 +1,40 @@
+section.about.js-section#about(data-scroll-section)
+	.about__inner
+		.container
+			.about__photo
+				img.about__photo-image(src=`${baseDir}images/photo.png` srcset=`${baseDir}images/photo@2x.png 2x` alt="Фото")
+			.about__row
+				.about__content
+					.about__title.anim(data-scroll)
+						| Сергей Дудин,
+						br
+						| HTML-верстальщик
+
+					.about__text.anim(data-scroll)
+						p
+							| Привет! Я адаптивно верстаю HTML сайты.
+							br
+							| Большую часть заказов выполнил на фрилансе.
+							br
+							| Выделю 2 основные причины, почему я решаю рассмотреть удаленную работу:
+							br
+							| - не постоянный поток заказов, за год может быть несколько периодов отсутствия заказов;
+							br
+							| -	хоть разок в жизни официально поработать в компании
+
+				.about__contacts.anim(data-scroll)
+					.about__contacts-item
+						a(href="mailto:ya.sergej20142014@yandex.ru")
+							| ya.sergej20142014@yandex.ru
+					.about__contacts-item
+						a(href="tel:+79222241692")
+							| +7 (922) 224-16-92
+					.about__contacts-item
+						| г. Екатеринбург
+					.about__social
+						a.about__social-link._facebook(href="javascript:" title="facebook" aria-label="facebook" data-social="fb" data-type="fb")
+							+svg("facebook")
+						a.about__social-link._vk(href="javascript:" title="vk" aria-label="vk" data-social="vk")
+							+svg("vk")
+						a.about__social-link._telegram(href="javascript:" title="telegram" aria-label="telegram" data-social="tg")
+							+svg("telegram")

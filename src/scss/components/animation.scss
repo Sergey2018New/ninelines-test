@@ -1,0 +1,27 @@
+.anim-item {
+	opacity: 0;
+	transition: $duration-anim opacity, $duration-anim transform;
+	will-change: transform, opacity;
+
+	&.is-inview {
+		opacity: 1;
+	}
+}
+
+.anim {
+	opacity: 0;
+	transition: $duration-anim opacity, $duration-anim transform;
+	will-change: transform, opacity;
+
+	&.is-inview {
+		opacity: 1;
+
+		.anim-item {
+			opacity: 1;
+		}
+	}
+
+	&--show {
+		opacity: 1;
+	}
+}

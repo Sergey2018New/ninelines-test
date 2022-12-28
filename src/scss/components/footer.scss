@@ -1,0 +1,166 @@
+.footer {
+	margin-top: auto;
+	padding: 100px 0 50px;
+	width: 100%;
+
+	&__picture {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 512px;
+
+		&.anim {
+			.footer__picture-inner {
+				transform: translate(0, 50%) scale(0.7);
+				transition: $duration-anim * 2 transform;
+				will-change: transform, opacity;
+			}
+
+			&.is-inview {
+				.footer__picture-inner {
+					transform: scale(1);
+				}
+			}
+		}
+	}
+
+	&__picture-inner {
+		position: relative;
+		overflow: hidden;
+		padding-top: 56.25%;
+	}
+
+	&__picture-image {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	&__up {
+		position: fixed;
+		right: 25px;
+		bottom: 90px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 2px solid $red;
+		border-radius: 50%;
+		width: 48px;
+		height: 48px;
+		opacity: 0;
+		pointer-events: none;
+
+		svg {
+			width: 20px;
+			height: 26px;
+			fill: none;
+			stroke: $primary;
+			stroke-width: 2;
+			transition: $duration-normal stroke;
+
+			@include mobile {
+				width: 12px;
+				height: 14px;
+			}
+		}
+
+		@include active {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		@include hover {
+			background: $red;
+
+			svg {
+				stroke: $white;
+			}
+		}
+
+		@include devices {
+			bottom: 25px;
+		}
+
+		@include mobile {
+			right: 20px;
+			bottom: 20px;
+			border-width: 1px;
+			width: 30px;
+			height: 30px;
+		}
+	}
+
+	&__progress {
+		position: fixed;
+		right: 25px;
+		bottom: 25px;
+		width: 48px;
+		height: 48px;
+
+		&-diagram {
+			position: relative;
+
+			svg {
+				position: relative;
+				fill: transparent;
+				transform: rotate(-90deg);
+
+				circle {
+					stroke: $primary;
+					stroke-width: 1.4;
+					transition: $duration-normal fill, $duration-normal stroke;
+
+					&:first-child {
+						transition-property: opacity;
+					}
+
+					&:last-child {
+						stroke: $red;
+					}
+				}
+			}
+		}
+
+		&-percent {
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-top: 1px;
+			width: 100%;
+			height: 100%;
+			transition: $duration-normal color;
+		}
+
+		&.is-finished {
+			svg {
+				circle {
+					&:first-child {
+						opacity: 0;
+					}
+
+					&:last-child {
+						fill: $red;
+					}
+				}
+			}
+
+			.footer__progress-percent {
+				color: $white;
+			}
+		}
+
+		@include devices {
+			display: none;
+		}
+	}
+
+	@include mobile {
+		padding-top: 20px;
+		padding-bottom: 40px;
+	}
+}

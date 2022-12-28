@@ -1,0 +1,77 @@
+.skills {
+	position: relative;
+	padding: 150px 0 100px;
+
+	&__cover {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -94px + 50px;
+		bottom: 0;
+		overflow: hidden;
+
+		@include mobile {
+			top: -9.33vw;
+		}
+	}
+
+	&__cover-image {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		z-index: -1;
+		width: 1155px;
+		height: 363px;
+		object-fit: contain;
+		transform: translate(-50%, 0);
+		pointer-events: none;
+
+		@include mobile {
+			width: 98.66vw;
+			height: 32.53vw;
+		}
+	}
+
+	&__inner {
+		position: relative;
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 20px;
+
+		&.anim {
+			opacity: 1;
+
+			.skill-item {
+				opacity: 0;
+				transform: translate(0, 30px) rotateY(10deg);
+
+				@for $i from 1 to 10 {
+					$delay: $i * 0.2;
+
+					&:nth-child(#{$i}) {
+						transition-delay: #{$delay}s;
+					}
+				}
+			}
+
+			&.is-inview {
+				.skill-item {
+					opacity: 1;
+					transform: none;
+				}
+			}
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@include mobile {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}

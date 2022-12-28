@@ -1,0 +1,30 @@
+mixin experienceItem(options)
+	.experience-item(class=options.class ? options.class : '' data-scroll)
+		.experience-item__date= options.date
+
+		.experience-item__position
+			.experience-item__position-name= options.position
+
+			.experience-item__position-badges
+				each item in options.badges
+					+badge(item)
+
+		.experience-item__company
+			if options.company.logo
+				img.experience-item__company-logo(src=options.company.logo srcset=`${options.company.logo2x} 2x` alt="")
+
+			.experience-item__company-info
+				if options.company.name.length
+					.experience-item__company-name= options.company.name
+
+				.experience-item__company-location= options.company.location
+
+		.experience-item__textWrapper
+			.experience-item__text
+				p !{options.description}
+
+				if options.links.length
+					.experience-item__links
+						each link in options.links
+							a(href=link.href target="_blank")
+								| #{link.name}

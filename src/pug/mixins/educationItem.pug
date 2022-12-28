@@ -1,0 +1,9 @@
+mixin educationItem(options)
+	div(class=options.main ? 'education-item education-item--main' : 'education-item' class=options.class ? options.class : '' data-scroll)
+		.education-item__logo
+			each badge in options.badges
+				+badge(badge)
+
+		.education-item__title !{options.name}
+
+		.education-item__text !{options.description}

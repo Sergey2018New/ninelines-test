@@ -1,0 +1,24 @@
+extends pug/base
+
+prepend vars
+	- title = 'Сергей Дудин, HTML-верстальщик'
+	- description = 'Привет! Я адаптивно верстаю HTML сайты. Большую часть заказов выполнил на фрилансе. Выделю 2 основные причины, почему я решаю рассмотреть удаленную работу: - не постоянный поток заказов, за год может быть несколько периодов отсутствия заказов; - хоть разок в жизни официально поработать в компании'
+	- image = './images/share.png'
+
+append vars
+	//-
+
+block content
+	include pug/data
+	include pug/components/preloader
+
+	.site(data-scroll-container)
+		include pug/components/header
+
+		include pug/sections/about
+		include pug/sections/work
+		include pug/sections/skills
+
+		include pug/components/footer
+
+		//- include pug/components/analytics

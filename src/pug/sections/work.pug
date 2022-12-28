@@ -1,0 +1,159 @@
+section.work.js-section#work(data-scroll-section)
+	.work__cover(data-scroll="" data-scroll-speed="0.7")
+		img.work__cover-image.for-desktop(src=`${baseDir}images/design/curve-1.svg` alt="")
+		img.work__cover-image.for-mobile(src=`${baseDir}images/design/curve-1-mobile.svg` alt="")
+
+	.work__inner
+		.container
+			.work__row
+				.work__experience
+					.work__experience-items-title.title.anim(data-scroll)
+						h2 Опыт работы
+
+					//- .work__experience-items.anim.anim--show(data-scroll)
+					.work__experience-items
+						+experienceItem({
+							class: 'anim',
+							date: 'Июль 2019',
+							position: 'Freelance Designer',
+							badges: ['graphic', 'usability', 'interface'],
+							company: {
+								logo: '',
+								name: '',
+								location: 'Netherlands, Worldwide'
+							},
+							description: 'Available for a project or job in UX/UI, Visual and Product design.',
+							links: [
+								{
+									href: 'http://google.ru',
+									name: 'Commercial tryouts'
+								},
+								{
+									href: 'http://google.ru',
+									name: 'Personal projects'
+								}
+							]
+						})
+
+						+experienceItem({
+							class: 'anim',
+							date: 'Январь 2017 - Сентябрь 2018',
+							position: 'Digital Designer',
+							badges: ['artist', 'graphic'],
+							company: {
+								logo: `${baseDir}images/logos/jcs.png`,
+								logo2x: `${baseDir}images/logos/jcs@2x.png`,
+								name: 'J Creative Solutions',
+								location: 'Digital agency in Minsk, Belarus'
+							},
+							description: 'Created visuals for digital marketing channels such as social media, promo web and online ads. Developed visual language from scratch or following the branding guidelines. Designed presentations <br> for clients and indoor purposes.',
+							links: [
+								{
+									href: 'http://google.ru',
+									name: 'Agency projects'
+								}
+							]
+						})
+
+						+experienceItem({
+							class: 'anim',
+							date: 'Март 2014 - Февраль 2017',
+							position: 'SEO Specialist → Lead SEO Specialist',
+							badges: ['graphic', 'seo'],
+							company: {
+								logo: `${baseDir}images/logos/oz.png`,
+								logo2x: `${baseDir}images/logos/oz@2x.png`,
+								name: 'OZ.by',
+								location: 'Online bookstore in Minsk, Belarus'
+							},
+							description: 'Improved website performance and user experience-item of the biggest online bookstore OZ in Belarus, being a part of the marketing team, <br> I interpreted Google Analytics data to IT, content and marketing colleagues. Advised on tech and content optimization strategy, automated processes, provided reports, increased organic traffic up to 150%.',
+							links: [
+								{
+									href: 'http://google.ru',
+									name: 'Annual company report 2016'
+								}
+							]
+						})
+
+						+experienceItem({
+							class: 'anim',
+							date: 'Август 2012 - Ноябрь 2013',
+							position: 'Content Specialist',
+							badges: ['seo'],
+							company: {
+								logo: `${baseDir}images/logos/21vek.png`,
+								logo2x: `${baseDir}images/logos/21vek@2x.png`,
+								name: '21vek.by',
+								location: 'E-commerce store in Minsk, Belarus'
+							},
+							description: 'Added and modified the product information, prepared images and text for the website, developed categories filters, ensure all info is correct in the catalogue with the goal of improving online shopper experience-item.',
+							links: []
+						})
+
+						+experienceItem({
+							class: 'anim',
+							date: 'Август 2011 - Ноябрь 2014',
+							position: 'Software Support Engineer',
+							badges: ['it'],
+							company: {
+								logo: `${baseDir}images/logos/integral.png`,
+								logo2x: `${baseDir}images/logos/integral@2x.png`,
+								name: 'Integral',
+								location: 'Microelectronics factory in Minsk, Belarus'
+							},
+							description: 'Supported retail accounting system LS Trade, troubleshoot technical problems.',
+							links: []
+						})
+
+				.work__picture#work-picture(data-scroll="" data-scroll-speed="1")
+					.work__picture-inner(data-scroll="" data-scroll-sticky="" data-scroll-offset="-10%, 0" data-scroll-target="#work-picture")
+						.work__picture-content
+							img.work__picture-image(src=`${baseDir}images/magician.png` srcset=`${baseDir}images/magician@2x.png 2x` alt="")
+
+				.work__education
+					.work__education-title.title.anim(data-scroll)
+						h2 Образование
+
+					.work__education-items
+						+educationItem({
+							class: 'anim',
+							main: true,
+							badges: ['graphic', 'interface', 'usability'],
+							name: 'Interface Design: Web&nbsp;&amp;&nbsp;Mobile',
+							description: '<p>IT-Academy, 2020</p>'
+						})
+
+						+educationItem({
+							class: 'anim',
+							badges: ['usability'],
+							name: 'Fundamentals of&nbsp;Usability',
+							description: '<p>Skillshare, Oct 2018</p>'
+						})
+
+						+educationItem({
+							class: 'anim',
+							badges: ['artist'],
+							name: 'CG Artist',
+							description: '<p>Polygon CG School, May&#8209;Sep 2017</p>'
+						})
+
+						+educationItem({
+							class: 'anim',
+							badges: ['graphic'],
+							name: 'Graphic Design',
+							description: '<p>Belarusian State Academy of&nbsp;Arts, 2015&nbsp;&#8209;&nbsp;2017 Postgraduate Diploma</p>'
+						})
+
+						+educationItem({
+							class: 'anim',
+							badges: ['seo'],
+							name: 'SEO Specialist',
+							description: '<p>ARTOX Media, Jun&#8209;Aug&#8209;2012</p>'
+						})
+
+						+educationItem({
+							class: 'anim',
+							badges: ['it'],
+							name: 'Information Technology Software',
+							description: '<p>Belarusian State University of Informatics and Radioelectronics, 2011 - 2015 Bachelor’s&nbsp;degree</p><p>Polotsk State Economic College, 2007 - 2011 Associate’s degree</p>'
+						})

@@ -1,0 +1,17 @@
+footer.footer
+	.footer__content(data-scroll-section)
+		.footer__container
+			.footer__picture.anim(data-scroll="" data-scroll-speed="0")
+				.footer__picture-inner
+					img.footer__picture-image(src=`${baseDir}images/hands.png` srcset=`${baseDir}images/hands@2x.png 2x` alt="")
+
+	button.footer__up.js-back-to-top(type="button")
+		+svg("arrow")
+	.footer__progress.js-progress
+		.footer__progress-diagram
+			svg(viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg")
+				circle(r="23" cx="24" cy="24")
+				circle.js-progress-circle(r="23" cx="24" cy="24")
+
+		.footer__progress-percent.js-progress-percent
+			| 0 %

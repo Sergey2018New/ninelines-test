@@ -1,0 +1,67 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
+
+// COLORS
+$primary: #282a33;
+$black: #000;
+$white: #fff;
+$grey: #828282;
+$blue: #2f80ed;
+$red: #d2233c;
+$facebook: #058cf0;
+$vk: #4c75a3;
+$telegram: #2ba2db;
+
+// BADGES
+$badges: (
+	"interface": (
+		"background": #938df8,
+		"border": #ccc9fd
+	),
+	"usability": (
+		"background": #ffcf41,
+		"border": #fff3b5
+	),
+	"artist": (
+		"background": #ef5389,
+		"border": #ff99be
+	),
+	"graphic": (
+		"background": #4ebff3,
+		"border": #c0f0ff
+	),
+	"seo": (
+		"background": #ffa35c,
+		"border": #ffd5b4
+	),
+	"it": (
+		"background": #3fc59d,
+		"border": #7cf5d2
+	)
+);
+
+// FONTS
+// stylelint-disable-next-line
+$font-primary: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-family-SFProDisplay: "SFProDisplay", "Arial", sans-serif;
+
+// EASING TRANSITIONS
+$duration-normal: 0.4s;
+$duration-anim: 0.8s;
+$easing-back-out: cubic-bezier(0.25, 0.74, 0.22, 1.1); // http://cubic-bezier.com/#.25,.74,.22,1.1
+$easing-back-in: cubic-bezier(0.47, -0.1, 0.5, -0.06); // http://cubic-bezier.com/#.47,-0.1,.5,-.06
+$easing-out: ease-out;
+$easing-in: ease-in;
+
+// Settings
+$desktop: 1025;
+$desktop-xl: 1800;
+$laptop: 1440;
+$tablet: 768;
+$mobile: 320;
+$desktop-vh: 750;
+
+// Container
+$gutters: 20px;
+$container-width: 79.16vw;
+$container-max-width: 1425px;
+$container-min-width: 1025px - $gutters * 2;

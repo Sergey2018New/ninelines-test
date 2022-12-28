@@ -1,0 +1,256 @@
+.menu {
+	&__list {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		gap: 32px;
+
+		@include devices {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 40px;
+		}
+	}
+
+	&__link {
+		position: relative;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1.21;
+		text-decoration: none;
+		color: $primary;
+		transition: $duration-normal color;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: -10px;
+			right: -10px;
+			top: -10px;
+			bottom: -10px;
+			border-radius: 10px;
+			background: $white;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: -30px;
+			top: -93px;
+			width: 104px;
+			height: 156px;
+			background: url("../images/design/curve-menu.svg") 0 0 no-repeat;
+			opacity: 0;
+			transform: rotateX(-20deg);
+			transition: $duration-normal opacity;
+			will-change: opacity;
+			pointer-events: none;
+
+			@include devices {
+				left: 50%;
+				top: 50%;
+				transform: translate(-48%, -58%) scale(0.5);
+			}
+		}
+
+		span {
+			position: relative;
+			z-index: 1;
+			display: inline-block;
+		}
+
+		@include hover {
+			color: $blue;
+		}
+
+		@include active {
+			&::after {
+				opacity: 1;
+			}
+		}
+
+		@include devices {
+			display: block;
+			height: auto;
+			font-size: 26px;
+			text-align: left;
+			color: $black;
+		}
+	}
+
+	&__overlay {
+		display: none;
+
+		@include devices {
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			z-index: 100;
+			display: block;
+			height: var(--vh, 100vh);
+			background: rgba($black, 0.7);
+			opacity: 0;
+			transition: $duration-normal opacity;
+			will-change: opacity;
+			pointer-events: none;
+
+			@include active {
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+	}
+
+	&__container {
+		@include devices {
+			position: relative;
+			padding: 60px 40px 240px;
+			min-height: 100%;
+			background: $white;
+			pointer-events: auto;
+		}
+	}
+
+	&__bg-image {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		width: 464px;
+		height: 310px;
+		max-width: none;
+		object-fit: contain;
+		transform: translate(-50%);
+		pointer-events: none;
+	}
+
+	&__body {
+		@include devices {
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 200;
+			display: none;
+			overflow: hidden;
+			overflow-y: auto;
+			width: 100%;
+			height: var(--vh, 100vh);
+			max-width: 100%;
+			opacity: 0;
+			transform: translate(-100%, 0);
+			transition: $duration-normal transform, $duration-normal opacity;
+			will-change: transform, opacity;
+
+			&.is-visible {
+				display: block;
+			}
+
+			@include active {
+				opacity: 1;
+				transform: translate(0, 0);
+			}
+		}
+	}
+
+	&__burger {
+		$burger-width: 26px + 20px * 2;
+		$burger-height: 26px + 20px * 2;
+		$burger-line-width: 26px;
+		$burger-line-height: 2px;
+		$burger-line-offset: 6px;
+
+		position: relative;
+		z-index: 201;
+		display: none;
+		width: $burger-width;
+		height: $burger-height;
+
+		span {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-top: calc(#{$burger-line-height} * (-0.5));
+			margin-left: calc(#{$burger-line-width} * (-0.5));
+			width: $burger-line-width;
+			height: $burger-line-height;
+			background: $primary;
+			transition: $duration-normal transform;
+			will-change: transform, opacity;
+
+			&:first-child {
+				transform: translateY(($burger-line-offset + $burger-line-height) * (-1));
+			}
+
+			&:last-child {
+				transform: translateY($burger-line-offset + $burger-line-height);
+			}
+
+			&:nth-child(2) {
+				transition-property: opacity;
+			}
+		}
+
+		@include active {
+			span {
+				&:first-child {
+					transform: rotate(45deg);
+				}
+
+				&:last-child {
+					transform: rotate(-45deg);
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+			}
+		}
+
+		@include devices {
+			display: block;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: none;
+		width: 60px;
+		height: 60px;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-top: -1px;
+			margin-left: -1.3rem;
+			width: 2.6rem;
+			height: 2px;
+			background: $white;
+			transform: rotate(45deg);
+			will-change: transform;
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+
+		span {
+			display: none;
+		}
+
+		@include devices {
+			display: block;
+		}
+	}
+}
+
+.is-menu-active {
+	@include devices {
+		overflow: hidden;
+		touch-action: none;
+	}
+}

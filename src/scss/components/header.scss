@@ -1,0 +1,28 @@
+.header {
+	pointer-events: none;
+
+	&__container {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__menu {
+		padding: 100px 0 50px 50px;
+		pointer-events: auto;
+
+		@include devices {
+			margin-right: $gutters * (-1);
+			padding-top: 10px;
+		}
+	}
+
+	&.is-fixed {
+		.header__inner {
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			z-index: 200;
+		}
+	}
+}

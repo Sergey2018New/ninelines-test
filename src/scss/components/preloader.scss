@@ -1,0 +1,32 @@
+.preloader {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 500;
+	background: $white;
+	opacity: 0;
+	visibility: hidden;
+	transition: $duration-normal * 3 opacity, $duration-normal * 3 visibility;
+	transition-delay: $duration-normal * 2;
+	pointer-events: auto;
+
+	&__image {
+		position: absolute;
+		right: 100%;
+		top: 100%;
+		width: 41.04vw;
+		height: 41.04vw;
+		max-width: 591px;
+		max-height: 591px;
+		object-fit: contain;
+		transition: $duration-normal * 2 transform;
+	}
+
+	@include active {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+}

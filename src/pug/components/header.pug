@@ -1,0 +1,23 @@
+header.header.is-fixed
+	.header__inner
+		.header__container.container
+			nav.header__menu.menu.js-menu
+				button.menu__burger.btn.js-menu-burger(type="button")
+					span
+					span
+					span
+				.menu__body.js-menu-body
+					.menu__container
+						img.menu__bg-image.for-devices(src=`${baseDir}images/hourglass.png` srcset=`${baseDir}images/hourglass@2x.png 2x` alt="")
+
+						.menu__list
+							each item, key in data.header.menu
+								a.menu__link.js-menu-link.js-scroll-to(
+									class=item.class
+									href=item.url
+									data-link=key
+									data-scroll-to
+								)
+									span= item.name
+
+						button.menu__close.js-menu-close(type="button")

@@ -1,0 +1,153 @@
+.about {
+	padding: 100px 0 50px;
+
+	&__photo {
+		margin-bottom: 40px;
+		width: 150px;
+		height: 150px;
+
+		@include mobile {
+			margin-bottom: 30px;
+			width: 80px;
+			height: 80px;
+		}
+	}
+
+	&__photo-image {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__row {
+		display: flex;
+		gap: 50px;
+
+		@include mobile {
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	&__content {
+		flex-grow: 1;
+	}
+
+	&__title {
+		margin-bottom: 30px;
+		font-weight: 700;
+		font-size: 36px;
+
+		h1 {
+			margin: 0;
+			font-weight: inherit;
+			font-size: inherit;
+			line-height: inherit;
+			color: inherit;
+		}
+
+		&.anim {
+			transform: translate(0, 40px);
+
+			&.is-inview {
+				transform: translate(0, 0);
+			}
+		}
+
+		@include mobile {
+			margin-bottom: 20px;
+			font-size: 28px;
+		}
+	}
+
+	&__text {
+		max-width: 560px;
+
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&.anim {
+			transform: translate(0, 40px);
+			transition-delay: 0.2s;
+
+			&.is-inview {
+				transform: translate(0, 0);
+			}
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		flex-shrink: 0;
+		flex-direction: column;
+		width: 270px;
+		gap: 10px;
+
+		&.anim {
+			transform: translate(-30px, 0);
+			transition-duration: $duration-anim * 1.2;
+
+			&.is-inview {
+				transform: none;
+			}
+		}
+	}
+
+	&__contacts-item {
+		a {
+			transition: $duration-normal color;
+
+			@include hover {
+				color: $blue;
+			}
+		}
+	}
+
+	&__social {
+		display: flex;
+		margin-top: 5px;
+		gap: 20px;
+	}
+
+	&__social-link {
+		width: 25px;
+		height: 25px;
+
+		svg {
+			transition: $duration-normal fill;
+		}
+
+		&._facebook {
+			@include hover {
+				svg {
+					fill: $facebook;
+				}
+			}
+		}
+
+		&._vk {
+			@include hover {
+				svg {
+					fill: $vk;
+				}
+			}
+		}
+
+		&._telegram {
+			@include hover {
+				svg {
+					fill: $telegram;
+				}
+			}
+		}
+	}
+
+	@include mobile {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}

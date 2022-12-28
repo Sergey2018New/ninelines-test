@@ -1,0 +1,44 @@
+.education-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 5px;
+
+	&__title {
+		font-weight: 700;
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 7px;
+
+		.badge {
+			margin-right: -1px;
+			margin-left: -1px;
+			width: 28px;
+			height: 28px;
+		}
+	}
+
+	&--main {
+		.education-item__logo {
+			.badge {
+				&:first-child,
+				&:last-child {
+					z-index: -1;
+					border-radius: 5px;
+					width: 16px;
+					height: 16px;
+
+					&::before {
+						border-width: 3px;
+						border-radius: 5px;
+					}
+				}
+			}
+		}
+	}
+}

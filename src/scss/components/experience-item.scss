@@ -1,0 +1,87 @@
+.experience-item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	&__date {
+		line-height: 1.21;
+		color: $grey;
+	}
+
+	&__position {
+		display: flex;
+		gap: 10px;
+	}
+
+	&__position-name {
+		font-weight: 700;
+		line-height: 1.21;
+	}
+
+	&__position-badges {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		height: 18px;
+
+		.badge {
+			margin-right: -3px;
+			border-radius: 2px;
+			width: 12px;
+			height: 12px;
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	&__company {
+		display: flex;
+		gap: 8px;
+	}
+
+	&__company-logo {
+		flex-shrink: 0;
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+		object-fit: cover;
+
+		+ .experience-item__company-info {
+			min-height: 30px;
+		}
+	}
+
+	&__company-info {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		line-height: 1.21;
+		gap: 0 8px;
+	}
+
+	&__company-name {
+		font-weight: 700;
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-top: 3px;
+		line-height: 1.21;
+		gap: 3px;
+
+		a {
+			text-decoration: underline;
+			color: $blue;
+			transition: $duration-normal color;
+
+			@include hover {
+				color: lighten($blue, 14%);
+			}
+		}
+	}
+}
